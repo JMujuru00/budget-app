@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Budget Planner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="/Style.css" rel="stylesheet">
+</head>
+<body>
+<div class="page-wrap">
+
+  <header>
+    <div class="header-left">
+      <h1>Budget Planner</h1>
+      <p>Your figures save automatically</p>
+    </div>
+    <div class="freq-control">
+      <label for="freq">View as</label>
+      <select id="freq">
+        <option value="1">Monthly</option>
+        <option value="12">Annual</option>
+        <option value="0.25">Weekly</option>
+      </select>
+    </div>
+  </header>
+
+  <div class="summary">
+    <div class="card income">
+      <div class="card-label">Total income</div>
+      <div class="card-value" id="total-income">£0</div>
+    </div>
+    <div class="card outgoing">
+      <div class="card-label">Total outgoings</div>
+      <div class="card-value" id="total-outgoing">£0</div>
+    </div>
+    <div class="card leftover">
+      <div class="card-label">Left over</div>
+      <div class="card-value" id="left-over">£0</div>
+    </div>
+  </div>
+
+  <div class="bars">
+    <div class="bar-row">
+      <span class="bar-name">Income</span>
+      <div class="bar-track"><div class="bar-fill g" id="bar-i" style="width:0%"></div></div>
+      <span class="bar-pct" id="pct-i">—</span>
+    </div>
+    <div class="bar-row">
+      <span class="bar-name">Outgoings</span>
+      <div class="bar-track"><div class="bar-fill r" id="bar-o" style="width:0%"></div></div>
+      <span class="bar-pct" id="pct-o">—</span>
+    </div>
+    <div class="bar-row">
+      <span class="bar-name">Left over</span>
+      <div class="bar-track"><div class="bar-fill b" id="bar-l" style="width:0%"></div></div>
+      <span class="bar-pct" id="pct-l">—</span>
+    </div>
+  </div>
+
+  <div class="sections">
+    <div class="section">
+      <div class="section-header">
+        <span class="section-title">Income</span>
+        <span class="section-total" id="sec-income">£0</span>
+      </div>
+      <div id="income-list"></div>
+      <button class="add-btn" onclick="addItem('income')">+ Add source</button>
+    </div>
+    <div class="section">
+      <div class="section-header">
+        <span class="section-title">Outgoings</span>
+        <span class="section-total" id="sec-outgoing">£0</span>
+      </div>
+      <div id="outgoing-list"></div>
+      <button class="add-btn" onclick="addItem('outgoing')">+ Add outgoing</button>
+    </div>
+  </div>
+
+  <p class="footer-note">
+    <span class="save-dot"></span> Changes saved to your browser
+  </p>
+</div>
+<script src="/script.js"></script>
+</body>
+</html>
