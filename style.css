@@ -14,6 +14,7 @@
     --blue: #1a4e8a;
     --blue-light: #dbeafe;
     --accent: #c9853a;
+    --accent-light: #fef3e7;
     --radius: 6px;
     --radius-lg: 12px;
   }
@@ -287,6 +288,18 @@
     border-color: #f5c6c6;
   }
 
+  /* Add buttons row */
+  .add-btn-row {
+    display: flex;
+    gap: 6px;
+    margin-top: 4px;
+  }
+
+  .add-btn-row .add-btn {
+    margin-top: 0;
+    flex: 1;
+  }
+
   .add-btn {
     width: 100%;
     margin-top: 4px;
@@ -306,6 +319,116 @@
     border-color: var(--accent);
     color: var(--accent);
     background: #fef9f4;
+  }
+
+  /* Group-trigger button has accent tint */
+  .add-btn-group-trigger {
+    border-color: #e8c9a0;
+    color: var(--accent);
+  }
+
+  .add-btn-group-trigger:hover {
+    background: var(--accent-light);
+    border-color: var(--accent);
+  }
+
+  /* ── Group block ── */
+  .group-block {
+    background: var(--accent-light);
+    border: 1px solid #e8c9a0;
+    border-radius: var(--radius-lg);
+    margin-bottom: 8px;
+    overflow: hidden;
+    animation: fadeUp 0.25s ease both;
+  }
+
+  .group-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 10px 8px 8px;
+    background: linear-gradient(to right, #fef3e7, #fdf0e2);
+    border-bottom: 1px solid #e8c9a0;
+  }
+
+  .group-toggle {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--accent);
+    border-radius: 4px;
+    transition: background 0.15s;
+    padding: 0;
+  }
+
+  .group-toggle:hover { background: rgba(201,133,58,0.15); }
+
+  .chevron {
+    transition: transform 0.2s ease;
+    display: block;
+  }
+
+  .chevron.collapsed { transform: rotate(-90deg); }
+
+  .group-name-input {
+    flex: 1;
+    min-width: 0;
+    font-family: 'DM Sans', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    color: var(--ink) !important;
+    background: transparent !important;
+    border: 1px solid transparent !important;
+    border-radius: var(--radius) !important;
+    padding: 4px 6px !important;
+    transition: border-color 0.15s, background 0.15s !important;
+  }
+
+  .group-name-input:focus {
+    outline: none !important;
+    background: white !important;
+    border-color: var(--accent) !important;
+  }
+
+  .group-total {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .group-body {
+    padding: 10px 10px 8px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .group-body.hidden { display: none; }
+
+  .group-item {
+    margin-bottom: 6px;
+  }
+
+  .add-btn-group {
+    margin-top: 2px;
+    font-size: 11px;
+    padding: 5px;
+    border-color: #e8c9a0;
+    color: #b8753a;
+  }
+
+  .add-btn-group:hover {
+    background: rgba(201,133,58,0.12);
+    border-color: var(--accent);
+    color: var(--accent);
   }
 
   /* Footer note */
